@@ -3,7 +3,7 @@ import 'package:AirEdify/display/widgets/spaces.dart';
 import 'package:AirEdify/value/values.dart';
 
 class TextWithBullet extends StatelessWidget {
-  TextWithBullet({
+  const TextWithBullet({
     required this.text,
     this.textStyle,
     this.spacing,
@@ -18,7 +18,7 @@ class TextWithBullet extends StatelessWidget {
     TextTheme textTheme = Theme.of(context).textTheme;
     return Row(
       children: [
-        Bullet(),
+        const Bullet(),
         spacing == null ? SpaceW16() : SizedBox(width: spacing),
         Text(
           text,
@@ -38,7 +38,7 @@ class Bullet extends StatelessWidget {
   final double borderRadius;
   final Color color;
 
-  Bullet({
+  const Bullet({
     this.width = 4.0,
     this.height = 4.0,
     this.borderRadius = 20,

@@ -25,7 +25,7 @@ class ProjectCategoryData {
 }
 
 class ProjectsSection extends StatefulWidget {
-  ProjectsSection({Key? key});
+  const ProjectsSection({Key? key});
 
   @override
   _ProjectsSectionState createState() => _ProjectsSectionState();
@@ -85,7 +85,7 @@ class _ProjectsSectionState extends State<ProjectsSection>
     double screenWidth = widthOfScreen(context) - (getSidePadding(context) * 2);
     double contentAreaWidth = screenWidth;
     return VisibilityDetector(
-      key: Key('project-section-sm'),
+      key: const Key('project-section-sm'),
       onVisibilityChanged: (visibilityInfo) {
         double visiblePercentage = visibilityInfo.visibleFraction * 100;
         if (visiblePercentage > 20) {
@@ -93,14 +93,14 @@ class _ProjectsSectionState extends State<ProjectsSection>
         }
       },
       child: ResponsiveBuilder(
-        refinedBreakpoints: RefinedBreakpoints(),
+        refinedBreakpoints: const RefinedBreakpoints(),
         builder: (context, sizingInformation) {
           double screenWidth = sizingInformation.screenSize.width;
-          if (screenWidth < (RefinedBreakpoints().tabletLarge)) {
+          if (screenWidth < (const RefinedBreakpoints().tabletLarge)) {
             return Container(
               padding:
                   EdgeInsets.symmetric(horizontal: getSidePadding(context)),
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage("assets/images/BG22.png"),
                   fit: BoxFit.cover,
@@ -139,7 +139,7 @@ class _ProjectsSectionState extends State<ProjectsSection>
             );
           } else {
             return VisibilityDetector(
-              key: Key('project-section_lg'),
+              key: const Key('project-section_lg'),
               onVisibilityChanged: (visibilityInfo) {
                 double visiblePercentage = visibilityInfo.visibleFraction * 100;
                 if (visiblePercentage > 40) {
@@ -149,7 +149,7 @@ class _ProjectsSectionState extends State<ProjectsSection>
               child: Column(
                 children: [
                   Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage("assets/images/BG22.png"),
                         fit: BoxFit.cover,
@@ -168,7 +168,7 @@ class _ProjectsSectionState extends State<ProjectsSection>
                             width: contentAreaWidth * 0.6,
                             child: _buildNimbusInfoSectionLg(),
                           ),
-                          Spacer(),
+                          const Spacer(),
                           NimbusButton(
                             buttonTitle: StringConst.ALL_PROJECTS,
                             buttonColor: AppColors.primaryColor,
@@ -179,7 +179,7 @@ class _ProjectsSectionState extends State<ProjectsSection>
                     ),
                   ),
                   SpaceH40(),
-                  Container(
+                  SizedBox(
                     width: widthOfScreen(context),
                     child: Wrap(
                       spacing: assignWidth(context, 0.025),
@@ -197,7 +197,7 @@ class _ProjectsSectionState extends State<ProjectsSection>
   }
 
   Widget _buildNimbusInfoSectionSm() {
-    return NimbusInfoSection2(
+    return const NimbusInfoSection2(
       sectionTitle: StringConst.MY_WORKS,
       title1: StringConst.MEET_MY_PROJECTS,
       hasTitle2: false,
@@ -286,7 +286,7 @@ class _ProjectsSectionState extends State<ProjectsSection>
 }
 
 class ProjectCategory extends StatefulWidget {
-  ProjectCategory({
+  const ProjectCategory({
     required this.title,
     required this.number,
     this.titleColor = AppColors.black,
@@ -324,7 +324,7 @@ class _ProjectCategoryState extends State<ProjectCategory>
     color = widget.titleColor;
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 450),
+      duration: const Duration(milliseconds: 450),
     );
   }
 

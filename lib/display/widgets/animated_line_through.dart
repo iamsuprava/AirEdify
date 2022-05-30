@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:AirEdify/value/values.dart';
 
 class AnimatedLineThrough extends StatefulWidget {
-  AnimatedLineThrough({
+  const AnimatedLineThrough({
     required this.text,
     this.textStyle,
   });
@@ -12,7 +12,7 @@ class AnimatedLineThrough extends StatefulWidget {
   final TextStyle? textStyle;
 
   @override
-  _AnimatedLineThroughState createState() => new _AnimatedLineThroughState();
+  _AnimatedLineThroughState createState() => _AnimatedLineThroughState();
 }
 
 class _AnimatedLineThroughState extends State<AnimatedLineThrough>
@@ -26,12 +26,12 @@ class _AnimatedLineThroughState extends State<AnimatedLineThrough>
   void initState() {
     super.initState();
     controller = AnimationController(
-      duration: Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 300),
       vsync: this,
     );
 
     final CurvedAnimation curve =
-        new CurvedAnimation(parent: controller, curve: Curves.easeOut);
+        CurvedAnimation(parent: controller, curve: Curves.easeOut);
 
     animation = Tween(begin: 0.0, end: 1.0).animate(curve)
       ..addListener(() => setState(() {}));

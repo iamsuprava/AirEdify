@@ -13,7 +13,7 @@ class StatItemData {
 }
 
 class StatisticsSection extends StatefulWidget {
-  StatisticsSection({Key? key});
+  const StatisticsSection({Key? key});
   @override
   _StatisticsSectionState createState() => _StatisticsSectionState();
 }
@@ -42,7 +42,7 @@ class _StatisticsSectionState extends State<StatisticsSection>
     double contentAreaWidth =
         widthOfScreen(context) - (getSidePadding(context) * 2);
     return VisibilityDetector(
-      key: Key('statistics-section'),
+      key: const Key('statistics-section'),
       onVisibilityChanged: (visibilityInfo) {
         double visiblePercentage = visibilityInfo.visibleFraction * 100;
         if (visiblePercentage > 30) {
@@ -53,17 +53,17 @@ class _StatisticsSectionState extends State<StatisticsSection>
         padding: EdgeInsets.symmetric(horizontal: getSidePadding(context)),
         child: Card(
           elevation: Sizes.ELEVATION_4,
-          shape: RoundedRectangleBorder(
+          shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
               Radius.circular(Sizes.RADIUS_10),
             ),
           ),
           color: AppColors.black400,
           child: ResponsiveBuilder(
-            refinedBreakpoints: RefinedBreakpoints(),
+            refinedBreakpoints: const RefinedBreakpoints(),
             builder: (context, sizingInformation) {
               double screenWidth = sizingInformation.screenSize.width;
-              if (screenWidth < (RefinedBreakpoints().tabletLarge)) {
+              if (screenWidth < (const RefinedBreakpoints().tabletLarge)) {
                 return Container(
                   width: contentAreaWidth,
                   padding:
@@ -80,7 +80,7 @@ class _StatisticsSectionState extends State<StatisticsSection>
                 );
               } else {
                 return ClipRRect(
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(Sizes.RADIUS_10),
                     bottomRight: Radius.circular(Sizes.RADIUS_10),
                   ),
@@ -108,10 +108,10 @@ class _StatisticsSectionState extends State<StatisticsSection>
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            Spacer(),
+                            const Spacer(),
                             ..._buildItems(Data.statItemsData,
                                 isHorizontal: true),
-                            Spacer(),
+                            const Spacer(),
                           ],
                         ),
                       ),
@@ -142,7 +142,7 @@ class _StatisticsSectionState extends State<StatisticsSection>
 
       if (index < data.length - 1) {
         if (isHorizontal) {
-          items.add(Spacer(flex: 2));
+          items.add(const Spacer(flex: 2));
         } else {
           items.add(SpaceH40());
         }

@@ -5,24 +5,23 @@ import 'package:AirEdify/display/layout/adaptive.dart';
 import 'package:AirEdify/display/widgets/buttons/airedify_button.dart';
 import 'package:AirEdify/display/widgets/content_area.dart';
 import 'package:AirEdify/display/widgets/buttons/airedify_button_link.dart';
-import 'package:AirEdify/display/widgets/airedify_link.dart';
 import 'package:AirEdify/display/widgets/spaces.dart';
 import 'package:AirEdify/utils/functions.dart';
 import 'package:AirEdify/value/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 List<FooterItem> footerItems = [
-  FooterItem(
+  const FooterItem(
     title: StringConst.PHONE_ME + ":",
     subtitle: StringConst.PHONE_NUMBER,
     iconData: FeatherIcons.phone,
   ),
-  FooterItem(
+  const FooterItem(
     title: StringConst.MAIL_ME + ":",
     subtitle: StringConst.DEV_EMAIL_2,
     iconData: FontAwesomeIcons.paperPlane,
   ),
-  FooterItem(
+  const FooterItem(
     title: StringConst.FOLLOW_ME_2 + ":",
     subtitle: StringConst.BEHANCE_ID,
     iconData: FontAwesomeIcons.behance,
@@ -30,7 +29,7 @@ List<FooterItem> footerItems = [
 ];
 
 class FooterSection extends StatefulWidget {
-  FooterSection({Key? key});
+  const FooterSection({Key? key});
   @override
   _FooterSectionState createState() => _FooterSectionState();
 }
@@ -62,7 +61,7 @@ class _FooterSectionState extends State<FooterSection> {
             builder: (context, sizingInformation) {
               double screenWidth = sizingInformation.screenSize.width;
 
-              if (screenWidth <= (RefinedBreakpoints().tabletNormal)) {
+              if (screenWidth <= (const RefinedBreakpoints().tabletNormal)) {
                 return _buildFooterSectionSm(
                   width: contentAreaWidth,
                   height: contentAreaHeight,
@@ -83,7 +82,7 @@ class _FooterSectionState extends State<FooterSection> {
                 text: StringConst.RIGHTS_RESERVED + " ",
                 style: footerTextStyle,
                 children: [
-                  TextSpan(text: StringConst.DESIGNED_BY + " "),
+                  const TextSpan(text: StringConst.DESIGNED_BY + " "),
                   TextSpan(
                     text: StringConst.WEB_GENIUS_LAB,
                     style: footerTextStyle?.copyWith(
@@ -173,7 +172,7 @@ class _FooterSectionState extends State<FooterSection> {
               Text(StringConst.MADE_IN_INDIA, style: footerTextStyle),
               SpaceW4(),
               ClipRRect(
-                borderRadius: BorderRadius.all(const Radius.circular(20)),
+                borderRadius: const BorderRadius.all(Radius.circular(20)),
                 child: Image.asset(
                   ImagePath.INDIA_FLAG,
                   width: Sizes.WIDTH_16,
@@ -211,7 +210,7 @@ class _FooterSectionState extends State<FooterSection> {
       );
       if (index < data.length - 1) {
         if (isHorizontal) {
-          items.add(Spacer(flex: 2));
+          items.add(const Spacer(flex: 2));
         } else {
           items.add(SpaceH40());
         }
@@ -303,7 +302,7 @@ class _FooterSectionState extends State<FooterSection> {
         child: Stack(
           children: [
             Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage("assets/images/BG4.png"),
                 fit: BoxFit.cover,
@@ -331,27 +330,27 @@ class _FooterSectionState extends State<FooterSection> {
             ),
             Column(
               children: [
-                Spacer(flex: 2),
+                const Spacer(flex: 2),
                 Text(
                   StringConst.LETS_TALK,
                   style: textTheme.headline3?.copyWith(color: AppColors.white),
                 ),
-                Spacer(),
+                const Spacer(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Spacer(flex: 3),
+                    const Spacer(flex: 3),
                     ..._buildFooterItems(footerItems, isHorizontal: true),
-                    Spacer(flex: 3),
+                    const Spacer(flex: 3),
                   ],
                 ),
-                Spacer(),
-                NimBusButtonLink(
+                const Spacer(),
+                const NimBusButtonLink(
                   url: StringConst.EMAIL_URL,
                   buttonTitle: StringConst.HIRE_ME,
                   buttonColor: AppColors.primaryColor,
                 ),
-                Spacer(flex: 2),
+                const Spacer(flex: 2),
               ],
             ),
           ],
@@ -362,7 +361,7 @@ class _FooterSectionState extends State<FooterSection> {
 }
 
 class FooterItem extends StatelessWidget {
-  FooterItem({
+  const FooterItem({
     required this.iconData,
     required this.title,
     required this.subtitle,

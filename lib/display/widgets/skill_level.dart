@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:AirEdify/display/layout/adaptive.dart';
 import 'package:AirEdify/display/widgets/spaces.dart';
@@ -15,7 +14,7 @@ class SkillLevelData {
 }
 
 class SkillLevel extends StatefulWidget {
-  SkillLevel({
+  const SkillLevel({
     required this.skill,
     required this.level,
     required this.controller,
@@ -73,7 +72,7 @@ class _SkillLevelState extends State<SkillLevel> {
   Widget _buildChild(double level) {
     TextTheme textTheme = Theme.of(context).textTheme;
     TextStyle? defaultStyle = textTheme.subtitle2;
-    return Container(
+    return SizedBox(
       width: widget.skillLevelWidth,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

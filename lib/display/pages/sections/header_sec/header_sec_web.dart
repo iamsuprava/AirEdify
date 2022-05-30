@@ -4,9 +4,7 @@ import 'package:AirEdify/display/layout/adaptive.dart';
 import 'package:AirEdify/display/pages/sections/header_sec/widgets.dart';
 import 'package:AirEdify/display/widgets/buttons/airedify_button.dart';
 import 'package:AirEdify/display/widgets/content_area.dart';
-import 'package:AirEdify/display/widgets/buttons/airedify_button_link.dart';
 import 'package:AirEdify/display/widgets/spaces.dart';
-import 'package:AirEdify/utils/functions.dart';
 import 'package:AirEdify/value/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
@@ -96,7 +94,7 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
       child: Stack(
         children: [
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage("assets/images/BG1.png"),
                 fit: BoxFit.cover,
@@ -173,7 +171,7 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                                 animatedTexts: [
                                   TypewriterAnimatedText(
                                     StringConst.INTRO,
-                                    speed: Duration(milliseconds: 60),
+                                    speed: const Duration(milliseconds: 60),
                                     textStyle: textTheme.headline2?.copyWith(
                                       fontSize: headerIntroTextSize,
                                     ),
@@ -191,7 +189,7 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                                 animatedTexts: [
                                   TypewriterAnimatedText(
                                     StringConst.POSITION,
-                                    speed: Duration(milliseconds: 80),
+                                    speed: const Duration(milliseconds: 80),
                                     textStyle: textTheme.headline2?.copyWith(
                                       fontSize: headerIntroTextSize,
                                       color: AppColors.primaryColor,
@@ -226,7 +224,7 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                                     ),
                                     SpaceH8(),
                                     SelectableText(
-                                      "${StringConst.DEV_EMAIL_2}",
+                                      StringConst.DEV_EMAIL_2,
                                       style: bodyTextStyle,
                                     ),
                                   ],
@@ -241,7 +239,7 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                                     ),
                                     SpaceH8(),
                                     SelectableText(
-                                      "${StringConst.BEHANCE_ID}",
+                                      StringConst.BEHANCE_ID,
                                       style: bodyTextStyle,
                                     ),
                                   ],
@@ -287,14 +285,14 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                   ),
                 ],
               ),
-              SizedBox(height: 150),
+              const SizedBox(height: 150),
               Container(
                 margin: EdgeInsets.only(left: (sizeOfBlobSm * 0.35)),
                 child: ResponsiveBuilder(
-                  refinedBreakpoints: RefinedBreakpoints(),
+                  refinedBreakpoints: const RefinedBreakpoints(),
                   builder: (context, sizingInformation) {
                     double screenWidth = sizingInformation.screenSize.width;
-                    if (screenWidth < RefinedBreakpoints().tabletNormal) {
+                    if (screenWidth < const RefinedBreakpoints().tabletNormal) {
                       return Container(
                         margin: EdgeInsets.only(right: (sizeOfBlobSm * 0.35)),
                         child: Column(
@@ -309,7 +307,7 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                         ),
                       );
                     } else if (screenWidth >=
-                            RefinedBreakpoints().tabletNormal &&
+                            const RefinedBreakpoints().tabletNormal &&
                         screenWidth <= 1024) {
                       return Wrap(
                         runSpacing: 24,
@@ -321,7 +319,7 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                           SizedBox(width: contentAreaWidth * 0.03),
                           Center(
                             child: Container(
-                              margin: EdgeInsets.only(top: 20),
+                              margin: const EdgeInsets.only(top: 20),
                               child: cardsForTabletView[2],
                             ),
                           ),
@@ -338,7 +336,7 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                                 data: Data.nimbusCardData,
                                 width: contentAreaWidth / 3.8,
                               ),
-                              Spacer(),
+                              const Spacer(),
                             ],
                           ),
                         ],

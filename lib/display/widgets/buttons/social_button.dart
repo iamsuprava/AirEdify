@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:AirEdify/value/values.dart';
-import 'package:url_launcher/link.dart';
 
 class SocialButtonData {
   final String tag;

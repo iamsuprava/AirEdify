@@ -4,7 +4,6 @@ import 'package:AirEdify/display/layout/adaptive.dart';
 import 'package:AirEdify/display/pages/sections/header_sec/widgets.dart';
 import 'package:AirEdify/display/widgets/buttons/airedify_button.dart';
 import 'package:AirEdify/display/widgets/content_area.dart';
-import 'package:AirEdify/display/widgets/buttons/airedify_button_link.dart';
 import 'package:AirEdify/display/widgets/spaces.dart';
 import 'package:AirEdify/value/values.dart';
 
@@ -71,7 +70,7 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
     return ContentArea(
       child: Stack(
         children: [
-          Container(
+          SizedBox(
             height: heightOfStack,
             child: Stack(
               children: [
@@ -144,7 +143,7 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                                 animatedTexts: [
                                   TypewriterAnimatedText(
                                     StringConst.INTRO,
-                                    speed: Duration(milliseconds: 60),
+                                    speed: const Duration(milliseconds: 60),
                                     textStyle: textTheme.headline2?.copyWith(
                                       fontSize: headerIntroTextSize,
                                     ),
@@ -162,7 +161,7 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                                 animatedTexts: [
                                   TypewriterAnimatedText(
                                     StringConst.POSITION,
-                                    speed: Duration(milliseconds: 80),
+                                    speed: const Duration(milliseconds: 80),
                                     textStyle: textTheme.headline2?.copyWith(
                                       fontSize: headerIntroTextSize,
                                       color: AppColors.primaryColor,
@@ -200,7 +199,7 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                                     ),
                                     SpaceH8(),
                                     SelectableText(
-                                      "${StringConst.DEV_EMAIL_2}",
+                                      StringConst.DEV_EMAIL_2,
                                       style: bodyTextStyle,
                                     ),
                                   ],
@@ -215,7 +214,7 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                                     ),
                                     SpaceH8(),
                                     SelectableText(
-                                      "${StringConst.BEHANCE_ID}",
+                                      StringConst.BEHANCE_ID,
                                       style: bodyTextStyle,
                                     ),
                                   ],
@@ -260,7 +259,7 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
               ),
               SpaceH40(),
               Padding(
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                   horizontal: sidePadding,
                 ),
                 child: Column(

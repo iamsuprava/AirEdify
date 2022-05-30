@@ -4,7 +4,7 @@ import 'package:AirEdify/value/values.dart';
 import 'package:url_launcher/link.dart';
 
 class NimbusButton extends StatelessWidget {
-  NimbusButton({
+  const NimbusButton({
     required this.buttonTitle,
     this.width = Sizes.WIDTH_150,
     this.height = Sizes.HEIGHT_60,

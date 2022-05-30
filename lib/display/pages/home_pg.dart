@@ -10,7 +10,6 @@ import 'package:AirEdify/display/pages/sections/nav_sec/nv_sec_mobile.dart';
 import 'package:AirEdify/display/pages/sections/nav_sec/nav_sec_web.dart';
 import 'package:AirEdify/display/pages/sections/projects_sec.dart';
 import 'package:AirEdify/display/pages/sections/skills_sec.dart';
-import 'package:AirEdify/display/pages/sections/statistics_sec.dart';
 import 'package:AirEdify/display/widgets/app_drawer.dart';
 import 'package:AirEdify/display/widgets/nav_item.dart';
 import 'package:AirEdify/display/widgets/spaces.dart';
@@ -73,10 +72,10 @@ class _HomePageState extends State<HomePage>
     return Scaffold(
       key: _scaffoldKey,
       drawer: ResponsiveBuilder(
-        refinedBreakpoints: RefinedBreakpoints(),
+        refinedBreakpoints: const RefinedBreakpoints(),
         builder: (context, sizingInformation) {
           double screenWidth = sizingInformation.screenSize.width;
-          if (screenWidth < RefinedBreakpoints().desktopSmall) {
+          if (screenWidth < const RefinedBreakpoints().desktopSmall) {
             return AppDrawer(
               menuList: navItems,
             );
@@ -92,7 +91,7 @@ class _HomePageState extends State<HomePage>
             // Scroll to header section
             scrollToSection(navItems[0].key.currentContext!);
           },
-          child: Icon(
+          child: const Icon(
             FontAwesomeIcons.arrowUp,
             size: Sizes.ICON_SIZE_18,
             color: AppColors.white,
@@ -102,10 +101,10 @@ class _HomePageState extends State<HomePage>
       body: Column(
         children: [
           ResponsiveBuilder(
-            refinedBreakpoints: RefinedBreakpoints(),
+            refinedBreakpoints: const RefinedBreakpoints(),
             builder: (context, sizingInformation) {
               double screenWidth = sizingInformation.screenSize.width;
-              if (screenWidth < RefinedBreakpoints().desktopSmall) {
+              if (screenWidth < const RefinedBreakpoints().desktopSmall) {
                 return NavSectionMobile(scaffoldKey: _scaffoldKey);
               } else {
                 return NavSectionWeb(
@@ -134,7 +133,7 @@ class _HomePageState extends State<HomePage>
                           ),
                           SizedBox(height: spacerHeight),
                           VisibilityDetector(
-                            key: Key("about"),
+                            key: const Key("about"),
                             onVisibilityChanged: (visibilityInfo) {
                               double visiblePercentage =
                                   visibilityInfo.visibleFraction * 100;
@@ -144,7 +143,7 @@ class _HomePageState extends State<HomePage>
                             },
                             child: Container(
                               key: navItems[1].key,
-                              child: AboutMeSection(),
+                              child: const AboutMeSection(),
                             ),
                           ),
                         ],
@@ -167,14 +166,14 @@ class _HomePageState extends State<HomePage>
                         children: [
                           Container(
                             key: navItems[2].key,
-                            child: SkillsSection(),
+                            child: const SkillsSection(),
                           ),
                           SizedBox(height: spacerHeight),
                           //StatisticsSection(),
                           SizedBox(height: spacerHeight),
                           Container(
                             key: navItems[3].key,
-                            child: ProjectsSection(),
+                            child: const ProjectsSection(),
                           ),
                         ],
                       ),
@@ -191,14 +190,14 @@ class _HomePageState extends State<HomePage>
                         children: [
                           Container(
                             key: navItems[4].key,
-                            child: AwardsSection(),
+                            child: const AwardsSection(),
                           ),
                           SpaceH40(),
                           Container(
                             key: navItems[5].key,
-                            child: BlogSection(),
+                            child: const BlogSection(),
                           ),
-                          FooterSection(),
+                          const FooterSection(),
                         ],
                       )
                     ],

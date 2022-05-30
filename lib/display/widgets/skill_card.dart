@@ -13,7 +13,7 @@ class SkillCardData {
 }
 
 class SkillCard extends StatefulWidget {
-  SkillCard({
+  const SkillCard({
     this.title = "",
     this.description = "",
     this.titleStyle,
@@ -71,7 +71,7 @@ class _SkillCardState extends State<SkillCard> {
       elevation: widget.elevation,
       shape: RoundedRectangleBorder(borderRadius: widget.borderRadius),
       child: Container(
-        key: Key("default"),
+        key: const Key("default"),
         child: widget.child ??
             Column(
               mainAxisAlignment: MainAxisAlignment.center,

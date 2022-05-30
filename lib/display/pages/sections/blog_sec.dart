@@ -14,7 +14,7 @@ const double kSpacing = 28.0;
 const double kRunSpacing = 16.0;
 
 class BlogSection extends StatefulWidget {
-  BlogSection({Key? key});
+  const BlogSection({Key? key});
   @override
   _BlogSectionState createState() => _BlogSectionState();
 }
@@ -22,7 +22,7 @@ class BlogSection extends StatefulWidget {
 class _BlogSectionState extends State<BlogSection> {
   final int blogLength = Data.blogData.length;
   double currentPageIndex = 1;
-  CarouselController _carouselController = CarouselController();
+  final CarouselController _carouselController = CarouselController();
 
   @override
   Widget build(BuildContext context) {
@@ -57,14 +57,14 @@ class _BlogSectionState extends State<BlogSection> {
           children: [
             ResponsiveBuilder(builder: (context, sizingInformation) {
               double screenWidth = sizingInformation.screenSize.width;
-              if (screenWidth <= (RefinedBreakpoints().tabletSmall)) {
+              if (screenWidth <= (const RefinedBreakpoints().tabletSmall)) {
                 return ContentArea(
                   padding: padding,
                   child: Column(
                     children: [
                       ContentArea(
                         width: contentAreaWidth,
-                        child: NimbusInfoSection2(
+                        child: const NimbusInfoSection2(
                           sectionTitle: StringConst.MY_BLOG,
                           title1: StringConst.BLOG_SECTION_TITLE_1,
                           title2: StringConst.BLOG_SECTION_TITLE_2,
@@ -91,14 +91,14 @@ class _BlogSectionState extends State<BlogSection> {
                     children: [
                       ContentArea(
                         width: screenWidth * 0.7,
-                        child: NimbusInfoSection1(
+                        child: const NimbusInfoSection1(
                           sectionTitle: StringConst.MY_BLOG,
                           title1: StringConst.BLOG_SECTION_TITLE_1,
                           title2: StringConst.BLOG_SECTION_TITLE_2,
                           body: StringConst.BLOG_DESC,
                         ),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       NimbusButton(
                         buttonTitle: StringConst.BLOG_VIEW_ALL,
                         buttonColor: AppColors.primaryColor,
@@ -115,8 +115,8 @@ class _BlogSectionState extends State<BlogSection> {
               child: ResponsiveBuilder(
                 builder: (context, sizingInformation) {
                   double widthOfScreen = sizingInformation.screenSize.width;
-                  if (widthOfScreen < (RefinedBreakpoints().tabletLarge)) {
-                    return Container(
+                  if (widthOfScreen < (const RefinedBreakpoints().tabletLarge)) {
+                    return SizedBox(
                       width: widthOfScreen,
                       height: screenWidth + 250,
                       child: CarouselSlider.builder(
@@ -139,12 +139,12 @@ class _BlogSectionState extends State<BlogSection> {
                       ),
                     );
                   } else if (widthOfScreen >=
-                          RefinedBreakpoints().tabletLarge &&
+                          const RefinedBreakpoints().tabletLarge &&
                       widthOfScreen <= 1024) {
                     return Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Container(
+                        SizedBox(
                           width: screenWidth,
                           child: CarouselSlider.builder(
                             itemCount: blogLength,
@@ -267,19 +267,19 @@ class _BlogSectionState extends State<BlogSection> {
         onTap: (index) {
           _moveToNextCarousel(index.toInt());
         },
-        decorator: DotsDecorator(
+        decorator: const DotsDecorator(
           color: AppColors.yellow10,
           activeColor: AppColors.yellow400,
           size: Size(Sizes.SIZE_6, Sizes.SIZE_6),
           activeSize: Size(Sizes.SIZE_24, Sizes.SIZE_6),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
-              const Radius.circular(Sizes.RADIUS_8),
+              Radius.circular(Sizes.RADIUS_8),
             ),
           ),
           activeShape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
-              const Radius.circular(Sizes.RADIUS_8),
+              Radius.circular(Sizes.RADIUS_8),
             ),
           ),
           spacing: EdgeInsets.symmetric(horizontal: Sizes.SIZE_4),

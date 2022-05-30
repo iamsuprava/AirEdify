@@ -24,7 +24,7 @@ class NimBusCardData {
 }
 
 class NimBusCard extends StatefulWidget {
-  NimBusCard({
+  const NimBusCard({
     this.leading,
     this.title,
     this.subtitle,
@@ -75,7 +75,7 @@ class _NimBusCardState extends State<NimBusCard>
   void initState() {
     super.initState();
     _controller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 300));
+        AnimationController(vsync: this, duration: const Duration(milliseconds: 300));
     animation = Tween(begin: 0.0, end: widget.offsetY).animate(
       CurvedAnimation(parent: _controller, curve: Curves.easeInOutQuart),
     );
@@ -119,7 +119,7 @@ class _NimBusCardState extends State<NimBusCard>
   }
 
   Widget _buildCard() {
-    return Container(
+    return SizedBox(
       width: widget.width,
       height: widget.height,
       child: ClipRRect(
@@ -132,23 +132,23 @@ class _NimBusCardState extends State<NimBusCard>
               mainAxisAlignment: widget.rowMainAxisAlignment,
               crossAxisAlignment: widget.rowCrossAxisAlignment,
               children: [
-                widget.leading != null ? Spacer() : Empty(),
+                widget.leading != null ? const Spacer() : Empty(),
                 widget.leading ?? Empty(),
-                widget.leading != null ? Spacer() : Empty(),
+                widget.leading != null ? const Spacer() : Empty(),
                 Column(
                   mainAxisAlignment: widget.columnMainAxisAlignment,
                   crossAxisAlignment: widget.columnCrossAxisAlignment,
                   children: [
-                    Spacer(),
+                    const Spacer(),
                     widget.title ?? Empty(),
                     widget.title != null ? SpaceH8() : Empty(),
                     widget.subtitle ?? Empty(),
-                    Spacer(),
+                    const Spacer(),
                   ],
                 ),
-                widget.trailing != null ? Spacer() : Empty(),
+                widget.trailing != null ? const Spacer() : Empty(),
                 widget.trailing ?? Empty(),
-                widget.trailing != null ? Spacer() : Empty(),
+                widget.trailing != null ? const Spacer() : Empty(),
               ],
             ),
           ),

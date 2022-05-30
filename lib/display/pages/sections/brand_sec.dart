@@ -9,7 +9,7 @@ import 'package:AirEdify/value/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class BrandSection extends StatelessWidget {
-  BrandSection({Key? key});
+  const BrandSection({Key? key});
   CarouselOptions carouselOptions({
     bool autoPlay = true,
     bool enlargeCenterPage = false,
@@ -47,8 +47,8 @@ class BrandSection extends StatelessWidget {
           ResponsiveBuilder(
             builder: (context, sizingInformation) {
               double screenWidth = sizingInformation.screenSize.width;
-              if (screenWidth <= (RefinedBreakpoints().tabletSmall)) {
-                return Container(
+              if (screenWidth <= (const RefinedBreakpoints().tabletSmall)) {
+                return SizedBox(
                   height: heightOfCarouselSm,
                   width: widthOfScreen(context),
                   child: CarouselSlider.builder(
@@ -69,7 +69,7 @@ class BrandSection extends StatelessWidget {
                   ),
                 );
               } else if (screenWidth < 1400) {
-                return Container(
+                return SizedBox(
                   height: heightOfCarouselMd,
                   width: widthOfScreen(context),
                   child: CarouselSlider.builder(
@@ -90,7 +90,7 @@ class BrandSection extends StatelessWidget {
                   ),
                 );
               } else {
-                return Container(
+                return SizedBox(
                   height: heightOfCarouselLg,
                   width: widthOfScreen(context),
                   child: CarouselSlider.builder(

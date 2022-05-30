@@ -21,7 +21,7 @@ class AnimatedNimbusButton extends StatefulWidget {
   final Curve curve;
   final GestureTapCallback? onTap;
 
-  AnimatedNimbusButton({
+  const AnimatedNimbusButton({
     required this.title,
     required this.iconData,
     this.titleColor = AppColors.white,
@@ -62,7 +62,7 @@ class _AnimatedNimbusButtonState extends State<AnimatedNimbusButton> {
     return InkWell(
       onTap: _isHovering ? widget.onTap : null,
       hoverColor: Colors.transparent,
-      child: Container(
+      child: SizedBox(
         width: widget.width,
         child: Row(
           children: [
@@ -71,7 +71,7 @@ class _AnimatedNimbusButtonState extends State<AnimatedNimbusButton> {
                 AnimatedContainer(
                   width: _isHovering ? widget.width : 0,
                   height: widget.height,
-                  duration: Duration(milliseconds: 300),
+                  duration: const Duration(milliseconds: 300),
                   curve: widget.curve,
                   decoration: BoxDecoration(
                     borderRadius: _isHovering
@@ -83,7 +83,7 @@ class _AnimatedNimbusButtonState extends State<AnimatedNimbusButton> {
                 MouseRegion(
                   onEnter: _isHovering ? (e) => _onHover(true) : null,
                   onExit: _isHovering ? (e) => _onHover(false) : null,
-                  child: Container(
+                  child: SizedBox(
                     width: widget.width,
                     child: Padding(
                       padding: EdgeInsets.only(

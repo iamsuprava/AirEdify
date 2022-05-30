@@ -4,8 +4,6 @@ import 'package:AirEdify/display/widgets/buttons/airedify_button.dart';
 import 'package:AirEdify/display/widgets/buttons/social_button.dart';
 import 'package:AirEdify/display/widgets/empty.dart';
 import 'package:AirEdify/display/widgets/nav_item.dart';
-import 'package:AirEdify/display/widgets/buttons/airedify_button_link.dart';
-import 'package:AirEdify/display/widgets/airedify_link.dart';
 import 'package:AirEdify/display/widgets/airedify_vertical_divider.dart';
 import 'package:AirEdify/display/widgets/spaces.dart';
 import 'package:AirEdify/utils/functions.dart';
@@ -29,7 +27,7 @@ const int menuSpacerRightSm = 3;
 class NavSectionWeb extends StatefulWidget {
   final List<NavItemData> navItems;
 
-  NavSectionWeb({required this.navItems});
+  const NavSectionWeb({required this.navItems});
 
   @override
   _NavSectionWebState createState() => _NavSectionWebState();
@@ -66,7 +64,7 @@ class _NavSectionWebState extends State<NavSectionWeb> {
 
     return Container(
       height: Sizes.HEIGHT_100,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.white,
         boxShadow: [
           Shadows.elevationShadow,
@@ -84,15 +82,15 @@ class _NavSectionWebState extends State<NavSectionWeb> {
               ),
             ),
             SizedBox(width: logoSpaceRight),
-            NimbusVerticalDivider(),
-            Spacer(flex: 1),
+            const NimbusVerticalDivider(),
+            const Spacer(flex: 1),
             ..._buildNavItems(widget.navItems),
             Spacer(flex: menuSpacerRight),
             ResponsiveBuilder(
-              refinedBreakpoints: RefinedBreakpoints(),
+              refinedBreakpoints: const RefinedBreakpoints(),
               builder: (context, sizingInformation) {
                 double screenWidth = sizingInformation.screenSize.width;
-                if (screenWidth < (RefinedBreakpoints().desktopSmall + 450)) {
+                if (screenWidth < (const RefinedBreakpoints().desktopSmall + 450)) {
                   return Empty();
                 } else {
                   return Row(
@@ -104,7 +102,7 @@ class _NavSectionWebState extends State<NavSectionWeb> {
                 }
               },
             ),
-            NimbusVerticalDivider(),
+            const NimbusVerticalDivider(),
             SizedBox(width: contactBtnSpaceLeft),
             NimbusButton(
               buttonTitle: StringConst.CONTACT_ME,
@@ -149,7 +147,7 @@ class _NavSectionWebState extends State<NavSectionWeb> {
           ),
         ),
       );
-      items.add(Spacer());
+      items.add(const Spacer());
     }
     return items;
   }

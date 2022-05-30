@@ -9,7 +9,7 @@ import 'package:responsive_builder/responsive_builder.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
 class AwardsSection extends StatefulWidget {
-  AwardsSection({Key? key});
+  const AwardsSection({Key? key});
   @override
   _AwardsSectionState createState() => _AwardsSectionState();
 }
@@ -56,7 +56,7 @@ class _AwardsSectionState extends State<AwardsSection>
     );
     double contentAreaHeight = screenHeight * 0.9;
     return VisibilityDetector(
-      key: Key('awards-section'),
+      key: const Key('awards-section'),
       onVisibilityChanged: (visibilityInfo) {
         double visiblePercentage = visibilityInfo.visibleFraction * 100;
         if (visiblePercentage > 50) {
@@ -66,7 +66,7 @@ class _AwardsSectionState extends State<AwardsSection>
         }
       },
       child: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/images/BG1.png"),
             fit: BoxFit.cover,
@@ -74,7 +74,7 @@ class _AwardsSectionState extends State<AwardsSection>
         ),
         padding: EdgeInsets.only(left: getSidePadding(context)),
         child: ResponsiveBuilder(
-          refinedBreakpoints: RefinedBreakpoints(),
+          refinedBreakpoints: const RefinedBreakpoints(),
           builder: (context, sizingInformation) {
             double screenWidth = sizingInformation.screenSize.width;
             if (screenWidth <= 1024) {
@@ -83,7 +83,7 @@ class _AwardsSectionState extends State<AwardsSection>
                   ResponsiveBuilder(
                     builder: (context, sizingInformation) {
                       double screenWidth = sizingInformation.screenSize.width;
-                      if (screenWidth < (RefinedBreakpoints().tabletSmall)) {
+                      if (screenWidth < (const RefinedBreakpoints().tabletSmall)) {
                         return _buildNimbusInfoSectionSm();
                       } else {
                         return _buildNimbusInfoSectionLg();
@@ -94,7 +94,7 @@ class _AwardsSectionState extends State<AwardsSection>
                   ResponsiveBuilder(
                     builder: (context, sizingInformation) {
                       double screenWidth = sizingInformation.screenSize.width;
-                      if (screenWidth < (RefinedBreakpoints().tabletSmall)) {
+                      if (screenWidth < (const RefinedBreakpoints().tabletSmall)) {
                         return _buildImage(
                           width: screenWidth,
                           height: screenHeight * 0.5,
@@ -124,9 +124,9 @@ class _AwardsSectionState extends State<AwardsSection>
                           Expanded(
                             child: Column(
                               children: [
-                                Spacer(),
+                                const Spacer(),
                                 _buildNimbusInfoSectionLg(),
-                                Spacer(flex: 2),
+                                const Spacer(flex: 2),
                               ],
                             ),
                           ),
@@ -174,9 +174,9 @@ class _AwardsSectionState extends State<AwardsSection>
         child: Row(
           children: [
             _buildAwards1(),
-            Spacer(),
+            const Spacer(),
             _buildAwards2(),
-            Spacer(flex: 4),
+            const Spacer(flex: 4),
           ],
         ),
       ),
@@ -207,10 +207,10 @@ class _AwardsSectionState extends State<AwardsSection>
                 left: 0,
                 bottom: 0,
                 child: ResponsiveBuilder(
-                  refinedBreakpoints: RefinedBreakpoints(),
+                  refinedBreakpoints: const RefinedBreakpoints(),
                   builder: (context, sizingInformation) {
                     double screenWidth = sizingInformation.screenSize.width;
-                    if (screenWidth < (RefinedBreakpoints().tabletSmall)) {
+                    if (screenWidth < (const RefinedBreakpoints().tabletSmall)) {
                       return RotationTransition(
                         turns: _controller,
                         child: Image.asset(
@@ -242,13 +242,13 @@ class _AwardsSectionState extends State<AwardsSection>
                     text2InView = true;
                   });
                 },
-                duration: Duration(milliseconds: 750),
+                duration: const Duration(milliseconds: 750),
               ),
               AnimatedPositioned(
                 right: text2InView ? textPosition : -150,
                 child: Text(StringConst.CV, style: titleStyle),
                 curve: Curves.fastOutSlowIn,
-                duration: Duration(milliseconds: 750),
+                duration: const Duration(milliseconds: 750),
               ),
             ],
           ),

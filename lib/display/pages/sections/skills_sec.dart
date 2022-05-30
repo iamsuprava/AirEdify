@@ -15,7 +15,7 @@ const double kMainAxisSpacing = 16.0;
 const double kCrossAxisSpacing = 16.0;
 
 class SkillsSection extends StatefulWidget {
-  SkillsSection({Key? key});
+  const SkillsSection({Key? key});
   @override
   _SkillsSectionState createState() => _SkillsSectionState();
 }
@@ -54,7 +54,7 @@ class _SkillsSectionState extends State<SkillsSection>
     );
 
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         image: DecorationImage(
           image: AssetImage("assets/images/BG2.png"),
           fit: BoxFit.cover,
@@ -62,12 +62,12 @@ class _SkillsSectionState extends State<SkillsSection>
       ),
       padding: EdgeInsets.symmetric(horizontal: getSidePadding(context)),
       child: ResponsiveBuilder(
-        refinedBreakpoints: RefinedBreakpoints(),
+        refinedBreakpoints: const RefinedBreakpoints(),
         builder: (context, sizingInformation) {
           double screenWidth = sizingInformation.screenSize.width;
-          if (screenWidth <= RefinedBreakpoints().tabletSmall) {
+          if (screenWidth <= const RefinedBreakpoints().tabletSmall) {
             return VisibilityDetector(
-              key: Key('skills-section-sm'),
+              key: const Key('skills-section-sm'),
               onVisibilityChanged: (visibilityInfo) {
                 double visiblePercentage = visibilityInfo.visibleFraction * 100;
                 if (visiblePercentage > 20) {
@@ -94,10 +94,10 @@ class _SkillsSectionState extends State<SkillsSection>
                 ),
               ),
             );
-          } else if (screenWidth > RefinedBreakpoints().tabletSmall &&
+          } else if (screenWidth > const RefinedBreakpoints().tabletSmall &&
               screenWidth <= 1024) {
             return VisibilityDetector(
-              key: Key('skills-section-md'),
+              key: const Key('skills-section-md'),
               onVisibilityChanged: (visibilityInfo) {
                 double visiblePercentage = visibilityInfo.visibleFraction * 100;
                 if (visiblePercentage > 25) {
@@ -124,7 +124,7 @@ class _SkillsSectionState extends State<SkillsSection>
             );
           } else {
             return VisibilityDetector(
-              key: Key('skills-section-lg'),
+              key: const Key('skills-section-lg'),
               onVisibilityChanged: (visibilityInfo) {
                 double visiblePercentage = visibilityInfo.visibleFraction * 100;
                 if (visiblePercentage > 50) {
@@ -142,7 +142,7 @@ class _SkillsSectionState extends State<SkillsSection>
                       width: contentAreaWidthLg,
                       height: contentAreaHeight,
                       padding:
-                          EdgeInsets.symmetric(horizontal: Sizes.HEIGHT_48),
+                          const EdgeInsets.symmetric(horizontal: Sizes.HEIGHT_48),
                       child: Center(
                         child: _buildSkillBoxes(
                           boxHeight: 250,
@@ -190,7 +190,7 @@ class _SkillsSectionState extends State<SkillsSection>
         crossAxisCount: crossAxisCount,
         itemCount: Data.skillCardData.length,
         shrinkWrap: true,
-        physics: NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         itemBuilder: (BuildContext context, int index) {
           if (index == 1 || index == 5) {
             return Container(color: Colors.transparent);

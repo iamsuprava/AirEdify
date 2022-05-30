@@ -4,7 +4,6 @@ import 'package:AirEdify/display/widgets/buttons/social_button_2.dart';
 import 'package:AirEdify/display/widgets/content_area.dart';
 import 'package:AirEdify/display/widgets/empty.dart';
 import 'package:AirEdify/display/widgets/airedify_info_sec.dart';
-import 'package:AirEdify/display/widgets/airedify_link.dart';
 import 'package:AirEdify/display/widgets/spaces.dart';
 import 'package:AirEdify/utils/functions.dart';
 import 'package:AirEdify/value/values.dart';
@@ -17,7 +16,7 @@ const double kSpacingLg = 24.0;
 const double kRunSpacingLg = 16.0;
 
 class AboutMeSection extends StatefulWidget {
-  AboutMeSection({Key? key});
+  const AboutMeSection({Key? key});
   @override
   _AboutMeSectionState createState() => _AboutMeSectionState();
 }
@@ -75,7 +74,7 @@ class _AboutMeSectionState extends State<AboutMeSection>
     double contentAreaHeightSm = screenHeight * 0.6;
     double contentAreaWidthLg = screenWidth * 0.5;
     return VisibilityDetector(
-      key: Key('about-section'),
+      key: const Key('about-section'),
       onVisibilityChanged: (visibilityInfo) {
         double visiblePercentage = visibilityInfo.visibleFraction * 100;
         if (visiblePercentage > 25) {
@@ -85,10 +84,10 @@ class _AboutMeSectionState extends State<AboutMeSection>
       child: Container(
         padding: EdgeInsets.only(left: getSidePadding(context)),
         child: ResponsiveBuilder(
-          refinedBreakpoints: RefinedBreakpoints(),
+          refinedBreakpoints: const RefinedBreakpoints(),
           builder: (context, sizingInformation) {
             double screenWidth = sizingInformation.screenSize.width;
-            if (screenWidth < (RefinedBreakpoints().tabletLarge)) {
+            if (screenWidth < (const RefinedBreakpoints().tabletLarge)) {
               return Column(
                 children: [
                   ContentArea(
@@ -181,10 +180,10 @@ class _AboutMeSectionState extends State<AboutMeSection>
           top: height * 0.1,
           right: -(width * 0.20),
           child: ResponsiveBuilder(
-            refinedBreakpoints: RefinedBreakpoints(),
+            refinedBreakpoints: const RefinedBreakpoints(),
             builder: (context, sizingInformation) {
               double screenWidth = sizingInformation.screenSize.width;
-              if (screenWidth < (RefinedBreakpoints().tabletLarge)) {
+              if (screenWidth < (const RefinedBreakpoints().tabletLarge)) {
                 return Image.asset(
                   ImagePath.BLOB_BLACK,
                   height: height * 0.25,
@@ -255,10 +254,10 @@ class _AboutMeSectionState extends State<AboutMeSection>
           top: height * 0.2,
           left: width * 0.70, //0.90
           child: ResponsiveBuilder(
-            refinedBreakpoints: RefinedBreakpoints(),
+            refinedBreakpoints: const RefinedBreakpoints(),
             builder: (context, sizingInformation) {
               double screenWidth = sizingInformation.screenSize.width;
-              if (screenWidth < (RefinedBreakpoints().tabletLarge)) {
+              if (screenWidth < (const RefinedBreakpoints().tabletLarge)) {
                 return Empty();
               } else {
                 return Image.asset(
@@ -272,15 +271,15 @@ class _AboutMeSectionState extends State<AboutMeSection>
         ),
 
         ResponsiveBuilder(
-          refinedBreakpoints: RefinedBreakpoints(),
+          refinedBreakpoints: const RefinedBreakpoints(),
           builder: (context, sizingInformation) {
             double screenWidth = sizingInformation.screenSize.width;
-            if (screenWidth < (RefinedBreakpoints().tabletNormal)) {
+            if (screenWidth < (const RefinedBreakpoints().tabletNormal)) {
               return nimbusInfoSectionSm(width: width);
             } else {
               //This container takes 85% of the space and leave 15% as spacing
               //between the blob and the content
-              return Container(
+              return SizedBox(
                 width: width * 0.85,
                 child: nimbusInfoSectionLg(),
               );

@@ -9,11 +9,11 @@ class HeaderSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ResponsiveBuilder(
-      refinedBreakpoints: RefinedBreakpoints(),
+      refinedBreakpoints: const RefinedBreakpoints(),
       builder: (context, sizingInformation) {
         double screenWidth = sizingInformation.screenSize.width;
-        if (screenWidth <= RefinedBreakpoints().tabletSmall) {
-          return HeaderSectionMobile();
+        if (screenWidth <= const RefinedBreakpoints().tabletSmall) {
+          return const HeaderSectionMobile();
         } else {
           return HeaderSectionWeb();
         }

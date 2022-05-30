@@ -5,7 +5,7 @@ import 'package:AirEdify/display/widgets/airedify_info_sec.dart';
 import 'package:AirEdify/value/values.dart';
 
 class TestimonialsSection extends StatelessWidget {
-  TestimonialsSection({Key? key});
+  const TestimonialsSection({Key? key});
   @override
   Widget build(BuildContext context) {
     double screenWidth = widthOfScreen(context);
@@ -19,7 +19,7 @@ class TestimonialsSection extends StatelessWidget {
       child: Row(
         children: [
           Stack(
-            children: [
+            children: const [
               Card(
                 child: NimbusInfoSection1(
                   sectionTitle: StringConst.MY_TESTIMONIALS,

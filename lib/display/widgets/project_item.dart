@@ -90,7 +90,7 @@ class _ProjectItemState extends State<ProjectItem>
       ),
     );
     _slideAnimation =
-        Tween<Offset>(begin: Offset(0, -0.1), end: Offset(0, 0)).animate(
+        Tween<Offset>(begin: const Offset(0, -0.1), end: const Offset(0, 0)).animate(
       CurvedAnimation(
         parent: _slideFadeController,
         curve: Curves.easeIn,

@@ -16,7 +16,7 @@ class AppDrawer extends StatefulWidget {
   final List<NavItemData> menuList;
   final GestureTapCallback? onClose;
 
-  AppDrawer({
+  const AppDrawer({
     this.color = AppColors.black200,
     this.width,
     required this.menuList,
@@ -36,7 +36,7 @@ class _AppDrawerState extends State<AppDrawer> {
       assignWidth(context, 0.60),
       md: assignWidth(context, 0.60),
     );
-    return Container(
+    return SizedBox(
       width: widget.width ?? defaultWidthOfDrawer,
       child: Drawer(
         child: Container(
@@ -57,10 +57,10 @@ class _AppDrawerState extends State<AppDrawer> {
                       height: Sizes.HEIGHT_52,
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   InkWell(
                     onTap: widget.onClose ?? () => _closeDrawer(),
-                    child: Icon(
+                    child: const Icon(
                       Icons.close,
                       size: Sizes.ICON_SIZE_30,
                       color: AppColors.white,
@@ -68,12 +68,12 @@ class _AppDrawerState extends State<AppDrawer> {
                   ),
                 ],
               ),
-              Spacer(flex: 2),
+              const Spacer(flex: 2),
               ..._buildMenuList(
                 context: context,
                 menuList: widget.menuList,
               ),
-              Spacer(flex: 6),
+              const Spacer(flex: 6),
               _buildFooterText(),
             ],
           ),
@@ -107,7 +107,7 @@ class _AppDrawerState extends State<AppDrawer> {
           ),
         ),
       );
-      menuItems.add(Spacer());
+      menuItems.add(const Spacer());
     }
     return menuItems;
   }
@@ -148,7 +148,7 @@ class _AppDrawerState extends State<AppDrawer> {
               text: StringConst.RIGHTS_RESERVED + " ",
               style: footerTextStyle,
               children: [
-                TextSpan(text: StringConst.DESIGNED_BY + " "),
+                const TextSpan(text: StringConst.DESIGNED_BY + " "),
                 TextSpan(
                   text: StringConst.WEB_GENIUS_LAB,
                   style: footerTextStyle?.copyWith(
@@ -190,7 +190,7 @@ class _AppDrawerState extends State<AppDrawer> {
             Text(StringConst.MADE_IN_INDIA, style: footerTextStyle),
             SpaceW4(),
             ClipRRect(
-              borderRadius: BorderRadius.all(const Radius.circular(20)),
+              borderRadius: const BorderRadius.all(Radius.circular(20)),
               child: Image.asset(
                 ImagePath.INDIA_FLAG,
                 width: Sizes.WIDTH_16,
@@ -201,7 +201,7 @@ class _AppDrawerState extends State<AppDrawer> {
             SpaceW4(),
             Text(StringConst.WITH_LOVE, style: footerTextStyle),
             SpaceW4(),
-            Icon(
+            const Icon(
               FontAwesomeIcons.solidHeart,
               color: AppColors.red,
               size: Sizes.ICON_SIZE_12,

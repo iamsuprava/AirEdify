@@ -23,7 +23,7 @@ class BlogCardData {
 }
 
 class BlogCard extends StatefulWidget {
-  BlogCard({
+  const BlogCard({
     required this.category,
     required this.title,
     required this.date,
@@ -78,7 +78,7 @@ class _BlogCardState extends State<BlogCard> {
   Widget build(BuildContext context) {
     TextTheme textTheme = Theme.of(context).textTheme;
 
-    return Container(
+    return SizedBox(
       width: widget.width,
       child: Column(
         children: [
@@ -87,7 +87,7 @@ class _BlogCardState extends State<BlogCard> {
               Container(
                 margin: const EdgeInsets.only(left: Sizes.MARGIN_16),
                 child: ClipRRect(
-                  borderRadius: BorderRadius.all(
+                  borderRadius: const BorderRadius.all(
                     Radius.circular(Sizes.RADIUS_16),
                   ),
                   child: Column(
@@ -99,9 +99,9 @@ class _BlogCardState extends State<BlogCard> {
                         onExit: (e) => _onImageHover(false),
                         child: AnimatedOpacity(
                           opacity: _isHoveringOnImage ? 1.0 : 0.85,
-                          duration: Duration(milliseconds: 300),
+                          duration: const Duration(milliseconds: 300),
                           child: ClipRRect(
-                            borderRadius: BorderRadius.all(
+                            borderRadius: const BorderRadius.all(
                               Radius.circular(Sizes.RADIUS_16),
                             ),
                             child: Image.asset(
@@ -123,7 +123,7 @@ class _BlogCardState extends State<BlogCard> {
                   horizontal: Sizes.PADDING_8,
                   vertical: Sizes.PADDING_8,
                 ),
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: AppColors.black,
                   borderRadius: BorderRadius.all(
                     Radius.circular(6),

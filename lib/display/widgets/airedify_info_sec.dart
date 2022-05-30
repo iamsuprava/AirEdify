@@ -20,7 +20,7 @@ class NimbusInfoSection1 extends StatelessWidget {
   final double dividerHeight;
   final Widget? child;
 
-  NimbusInfoSection1({
+  const NimbusInfoSection1({
     required this.sectionTitle,
     required this.title1,
     required this.body,
@@ -63,7 +63,7 @@ class NimbusInfoSection1 extends StatelessWidget {
                   ),
                 ),
                 SpaceH16(),
-                Container(
+                SizedBox(
                   height: dividerHeight,
                   child: VerticalDivider(
                     color: dividerColor,
@@ -130,7 +130,7 @@ class NimbusInfoSection2 extends StatelessWidget {
   final double dividerWidth;
   final Widget? child;
 
-  NimbusInfoSection2({
+  const NimbusInfoSection2({
     required this.sectionTitle,
     required this.title1,
     required this.body,
@@ -159,7 +159,7 @@ class NimbusInfoSection2 extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Container(
+            SizedBox(
               width: dividerWidth,
               child: Divider(
                 color: dividerColor,

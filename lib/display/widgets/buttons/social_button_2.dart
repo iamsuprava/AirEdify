@@ -21,7 +21,7 @@ class SocialButton2Data {
 }
 
 class SocialButton2 extends StatefulWidget {
-  SocialButton2({
+  const SocialButton2({
     required this.title,
     required this.iconData,
     required this.onPressed,
@@ -76,7 +76,7 @@ class _SocialButton2State extends State<SocialButton2>
     targetColor = widget.hoverTextColor;
 
     controller = AnimationController(
-      duration: Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 300),
       vsync: this,
     );
 
@@ -98,7 +98,7 @@ class _SocialButton2State extends State<SocialButton2>
     return MouseRegion(
       onEnter: (e) => _mouseEnter(true),
       onExit: (e) => _mouseEnter(false),
-      child: Container(
+      child: SizedBox(
         width: widget.width,
         height: widget.height,
         child: Row(
@@ -107,13 +107,13 @@ class _SocialButton2State extends State<SocialButton2>
             AnimatedContainer(
               width: widget.buttonWidth,
               height: widget.buttonHeight,
-              duration: Duration(milliseconds: 400),
+              duration: const Duration(milliseconds: 400),
               curve: Curves.easeOut,
               decoration: BoxDecoration(
                   color: _isHovering
                       ? widget.hoverButtonColor
                       : widget.buttonColor,
-                  borderRadius: BorderRadius.all(Radius.circular(4))),
+                  borderRadius: const BorderRadius.all(Radius.circular(4))),
               child: MaterialButton(
                 onPressed: widget.onPressed,
                 child: Icon(

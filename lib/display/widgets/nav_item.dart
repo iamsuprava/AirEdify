@@ -20,7 +20,7 @@ class NavItemData {
 }
 
 class NavItem extends StatefulWidget {
-  NavItem({
+  const NavItem({
     required this.title,
     this.titleColor = AppColors.black,
     this.isSelected = false,
@@ -62,7 +62,7 @@ class _NavItemState extends State<NavItem> with SingleTickerProviderStateMixin {
           children: [
             if (!widget.isMobile)
               widget.isSelected
-                  ? Positioned(
+                  ? const Positioned(
                       top: Sizes.SIZE_12,
                       child: SelectedIndicator(
                         width: indicatorWidth,

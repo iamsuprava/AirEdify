@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:AirEdify/value/values.dart';
 
 class CircularContainer extends StatelessWidget {
-  CircularContainer({
+  const CircularContainer({
     this.child,
     this.width,
     this.height,
