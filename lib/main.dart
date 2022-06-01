@@ -2,14 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:layout/layout.dart';
 import 'package:AirEdify/display/routes/router.gr.dart';
 import 'package:AirEdify/value/values.dart';
-import 'package:url_strategy/url_strategy.dart';
-
 import 'theme.dart';
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  setPathUrlStrategy();
-
   runApp(AirEdify());
 }
 
